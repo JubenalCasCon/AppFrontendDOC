@@ -1,12 +1,16 @@
-<div class="w-full h-32 sm:h-16 " style="background-image: url(../assets/imagenes/portada.jpg);">
-    <header class="text-white items-center justify-around flex text-center ">
-          <i class="fa fa-user fa-2x "><a [routerLink]="['/perfil']" class="block">¿Quien soy?</a></i>
-   <i class="fa fa-paperclip fa-2x"><a [routerLink]="['/proyectos']" class="block">Proyectos</a></i>
-   <i class="fa fa-envelope fa-2x"><a [routerLink]="['/contacto']" class="block">Contacto</a></i>
-   <i class="fa fa-book fa-2x"><a [routerLink]="['/curriculum']" class="block">Curriculum</a></i>
-   <i class="fa fa-folder-open fa-2x"><a [routerLink]="['/blog']" class="block">Blog de aprendizaje</a></i>
-   </header>
-</div>
+<!-- Header responsivo -->
+<header>
+    <div class="h-32  text-white bg-center bg-cover flex justify-center items-center flex-col" style="background-image: url(../assets/imagenes/portada.jpg);">
+        <div class=" mx-2 text-2xl sm:text-3xl lg:text-4xl tracking-widest sm:mx-auto  flex justify-around">
+        <i class="fa fa-user text-center ml-6 mr-1 sm:mr-3  lg:ml-2"><a [routerLink]="['/perfil']" class="block">Yo</a></i>
+        <i class="fa fa-paperclip  text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/proyectos']" class="block">Webs</a></i>
+        <i class="fa fa-envelope text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/contacto']" class="block">Info</a></i>
+        <i class="fa fa-book  text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/curriculum']" class="block">CV</a></i>
+        <i class="fa fa-folder-open  text-center mr-auto lg:ml-2 "><a [routerLink]="['/blog']" class="block">Blog</a></i>
+    </div>
+    </div>
+    </header>
+    
 
 <div class="container text-justify inline-block text-2xl" style="font-family: 'Montserrat', sans-serif;">
     <p class="text-center">¿Quien soy?</p>
