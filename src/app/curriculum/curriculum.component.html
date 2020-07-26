@@ -1,15 +1,7 @@
 <!-- Header responsivo -->
 <header>
-    <div class="h-32  text-white bg-center bg-cover flex justify-center items-center flex-col" style="background-image: url(../assets/imagenes/portada.jpg);">
-        <div class=" mx-2 text-2xl sm:text-3xl lg:text-4xl tracking-widest sm:mx-auto  flex justify-around">
-        <i class="fa fa-user text-center ml-6 mr-1 sm:mr-3  lg:ml-2"><a [routerLink]="['/perfil']" class="block">Yo</a></i>
-        <i class="fa fa-paperclip  text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/proyectos']" class="block">Webs</a></i>
-        <i class="fa fa-envelope text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/contacto']" class="block">Info</a></i>
-        <i class="fa fa-book  text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/curriculum']" class="block">CV</a></i>
-        <i class="fa fa-folder-open  text-center mr-auto lg:ml-2 "><a [routerLink]="['/blog']" class="block">Blog</a></i>
-    </div>
-    </div>
-    </header>
+    <app-header></app-header>
+    <router-outlet></router-outlet>
     
 <div class="mx-auto text-center">
     <p>Curriculum simplificado</p>

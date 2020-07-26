@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Contacto} from './contacto'
 
 @Component({
   selector: 'app-contacto',
@@ -6,8 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contacto.component.css']
 })
 export class ContactoComponent implements OnInit {
+public contacto:Contacto;
 
-  constructor() { }
+  constructor() {
+    this.contacto = new Contacto("","","","","")
+
+   }
+
+   onSubmit(){
+     console.log(this.contacto)
+   }
 
   ngOnInit() {
   }

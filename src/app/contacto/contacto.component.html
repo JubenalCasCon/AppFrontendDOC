@@ -1,51 +1,24 @@
 <!-- Header responsivo -->
-<header>
-    <div class="h-32  text-white bg-center bg-cover flex justify-center items-center flex-col" style="background-image: url(../assets/imagenes/portada.jpg);">
-        <div class=" mx-2 text-2xl sm:text-3xl lg:text-4xl tracking-widest sm:mx-auto  flex justify-around">
-        <i class="fa fa-user text-center ml-6 mr-1 sm:mr-3  lg:ml-2"><a [routerLink]="['/perfil']" class="block">Yo</a></i>
-        <i class="fa fa-paperclip  text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/proyectos']" class="block">Webs</a></i>
-        <i class="fa fa-envelope text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/contacto']" class="block">Info</a></i>
-        <i class="fa fa-book  text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/curriculum']" class="block">CV</a></i>
-        <i class="fa fa-folder-open  text-center mr-auto lg:ml-2 "><a [routerLink]="['/blog']" class="block">Blog</a></i>
-    </div>
-    </div>
-    </header>
-    
-<div class="container mx-auto h-full flex justify-center items-center mb-2" style="font-family: 'Montserrat', sans-serif;">
-    <div class="w-1/3 ">
-        <br class="text-center">Contacto
-        <br class="text-center">Estoy para atenderte, por favor , déjame tu mensaje
-
-        <div class="w-full max-w-xs">
-            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-                        Nombre o empresa
-                    </label>
-                    <input type="text"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="username" placeholder="Nombre o empresa">
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
-                    <input type="email"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="email" placeholder="Email">
-                </div>
-                <div class="mb-4">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="telefono">Teléfono</label>
-                    <input type="tel"
-                        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        id="telefono" placeholder="telefono">
-                </div>
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="contacto">Contacto</label>
-                <input type="text"
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
-                    id="contacto" placeholder="contacto">
-            </form>
+<app-header></app-header>
+ <router-outlet></router-outlet>
+    <form #formcontacto="ngForm" (ngSubmit)="onSubmit()">
+    <div class=" w-full h-full flex justify-center">
+        <div class="mx-4 my-4 px-2 py-2 border-gray-400 border-2 border-solid flex-col w-64  shadow-lg flex justify-center rounded-md">
+        <p class="text-center">Deja un mensaje en este formulario y con gusto me comunicaré contigo</p>
+        <p>Nombre</p>
+        <input class="border-2 border-4 border-solid shadow-md rounded-md" type="text" name="nombre" #nombre="ngModel" [(ngModel)]="contacto.nombre">
+        <p>Correo Electrónico</p>
+        <input class="border-2 border-4 border-solid shadow-md rounded-md"  type="text" name="correo" #correo="ngModel" [(ngModel)]="contacto.correo">
+        <p>Teléfono</p>
+        <input class="border-2 border-4 border-solid shadow-md rounded-md" type="text" name="telefono" #telefono="ngModel" [(ngModel)]="contacto.telefono">
+        <p>Asunto</p>
+        <input class="border-2 border-4 border-solid shadow-md rounded-md" type="text" name="asunto" #asunto="ngModel" [(ngModel)]="contacto.asunto">
+        <p>Mensaje</p>
+        <input class="border-2 border-4 border-solid shadow-md rounded-md h-64" type="text" name="mensaje" #mensaje="ngModel" [(ngModel)]="contacto.mensaje">
+        
+        <input type="submit" value="Enviar" class="border-grey-700 border-2 border-solid w-24 h-8 rounded-md shadow-lg px-2  mx-2 my-2 bg-gray-600 text-white">
         </div>
-    </div>
-</div>
-
+        </div>
+        
+    </form>
 

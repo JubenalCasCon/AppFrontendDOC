@@ -1,76 +1,35 @@
 <!-- Header responsivo -->
-<header>
-    <div class="h-32  text-white bg-center bg-cover flex justify-center items-center flex-col" style="background-image: url(../assets/imagenes/portada.jpg);">
-        <div class=" mx-2 text-2xl sm:text-3xl lg:text-4xl tracking-widest sm:mx-auto  flex justify-around">
-        <i class="fa fa-user text-center ml-6 mr-1 sm:mr-3  lg:ml-2"><a [routerLink]="['/perfil']" class="block">Yo</a></i>
-        <i class="fa fa-paperclip  text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/proyectos']" class="block">Webs</a></i>
-        <i class="fa fa-envelope text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/contacto']" class="block">Info</a></i>
-        <i class="fa fa-book  text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/curriculum']" class="block">CV</a></i>
-        <i class="fa fa-folder-open  text-center mr-auto lg:ml-2 "><a [routerLink]="['/blog']" class="block">Blog</a></i>
-    </div>
-    </div>
-    </header>
+<app-header></app-header>
+ <router-outlet></router-outlet>
     
- <div class="container flex  ml-0 h-auto flex-wrap sm:fixed ">
-    <div class="max-w-sm rounded overflow-hidden shadow-lg mx-auto mt-4 border-gray-600 border-2 border-solid">
-        <div class="flex justify-center w-auto  " style="font-family: 'Montserrat', sans-serif;">
-            <img class="w-64" src="../assets/imagenes/portada.jpg" alt="portada">
+ <!-- Card con referencias --> 
+
+<div class="container p-3 mx-auto my-auto flex flex-row md:flex-no-wrap items-center justify-center border-black border-2 border-dashed flex-wrap">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg border-black border-solid border-2 md:mr-3">
+        <img class="w-full h-auto m-0" [src]="imagenmuestra" alt="imagenmuestra">
+        <div class="font-bold  text-xl mb-2 p-3 m-2">
+            Los mejores atardeceres de la tierra
         </div>
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Sistema de inventarios UG </div>
-            <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus odio sit
-                corporis doloremque esse. Eveniet veniam, ipsam ab, aspernatur iusto quas harum incidunt in quidem id
-                reprehenderit, ad odit ea!</p>
-        </div>
-        <div class="px-6 py-4">
-            <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">Ejemplo</span>
-        </div>
+        <p class="p-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor laboriosam porro assumenda, aspernatur nobis ad facere ipsa et aliquam id, officiis neque repellat a laborum natus vero maxime quae pariatur!</p>
+        
     </div>
 
-    <div class="max-w-sm rounded overflow-hidden shadow-lg mx-auto mt-4 border-gray-600 border-2 border-solid">
-        <div class="flex justify-center ">
-            <img class="w-64" src="../assets/imagenes/portada.jpg" alt="portada">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg border-black border-solid border-2 ">
+        <img class="w-full h-auto m-0" [src]="imagenmuestra" alt="imagenmuestra">
+        <div class="font-bold  text-xl mb-2 p-3 m-2">
+            Los mejores atardeceres de la tierra
         </div>
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Escénica Proyecto</div>
-            <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus odio sit
-                corporis doloremque esse. Eveniet veniam, ipsam ab, aspernatur iusto quas harum incidunt in quidem id
-                reprehenderit, ad odit ea!</p>
-        </div>
-        <div class="px-6 py-4">
-            <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">Ejemplo</span>
-        </div>
+        <p class="p-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor laboriosam porro assumenda, aspernatur nobis ad facere ipsa et aliquam id, officiis neque repellat a laborum natus vero maxime quae pariatur!</p>
+        
     </div>
 
-    <div class="max-w-sm rounded overflow-hidden shadow-lg mx-auto mt-4 border-gray-600 border-2 border-solid">
-        <div class="flex justify-center ">
-            <img class="w-64" src="../assets/imagenes/portada.jpg" alt="portada">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg border-black border-solid border-2 ">
+        <img class="w-full h-auto m-0" [src]="imagenmuestra" alt="imagenmuestra">
+        <div class="font-bold  text-xl mb-2 p-3 m-2">
+            Los mejores atardeceres de la tierra
         </div>
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Inocisa Proyecto </div>
-            <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus odio sit
-                corporis doloremque esse. Eveniet veniam, ipsam ab, aspernatur iusto quas harum incidunt in quidem id
-                reprehenderit, ad odit ea!</p>
-        </div>
-        <div class="px-6 py-4">
-            <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">Ejemplo</span>
-        </div>
+        <p class="p-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor laboriosam porro assumenda, aspernatur nobis ad facere ipsa et aliquam id, officiis neque repellat a laborum natus vero maxime quae pariatur!</p>
+        
     </div>
+
 </div>
-
-
-
-
-
-<!-- <div class="container">
-    <p>.</p>
-    <h2 style="text-align: center;">Desarrollador de TI</h2>
-    <h3>  Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit </h3>
-    <h5 style="text-align: center;">Universidad de Guanajuato Campus Irapato Salamanca</h5>
-    <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">Github</button>
-    <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">Página web</button>
-</div>
- -->

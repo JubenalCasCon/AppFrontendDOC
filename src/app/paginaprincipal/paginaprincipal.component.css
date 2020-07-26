@@ -1,0 +1,9 @@
+.botonestilo
+{
+background:linear-gradient(180deg,#33B1CB );
+}
+
+.botonestilo:hover
+{
+background: #40dfff;;
+}

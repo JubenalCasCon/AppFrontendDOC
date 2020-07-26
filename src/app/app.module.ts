@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
-import {RouterModule,Routes} from '@angular/router'
+import {RouterModule,Routes,ExtraOptions} from '@angular/router'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactoComponent } from './contacto/contacto.component';
@@ -12,6 +12,19 @@ import { LoginComponent } from './login/login.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 import { PruebaComponent } from './prueba/prueba.component';
 import { AprendizajeComponent } from './aprendizaje/aprendizaje.component';
+import{FormsModule} from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { ReferenciasComponent } from './referencias/referencias.component';
+import { OwlModule } from 'ngx-owl-carousel';
+
+
+
+const routerOptions: ExtraOptions = {
+  scrollPositionRestoration:'enabled',
+  anchorScrolling :"enabled",
+  scrollOffset:[0,64]
+};
+
 
 const routes:Routes = [{path:'',component:PaginaprincipalComponent},
 {path:'contacto',component:ContactoComponent},
@@ -21,8 +34,10 @@ const routes:Routes = [{path:'',component:PaginaprincipalComponent},
 {path:'galeria', component:GaleriaComponent},
 {path:'login', component:LoginComponent},
 {path:'quiensoy',component:QuiensoyComponent},
+{path:'prueba',component:QuiensoyComponent},
 {path:'prueba',component:PruebaComponent},
-{path:'blog',component:AprendizajeComponent}];
+{path:'blog',component:AprendizajeComponent},
+{path:'referencias',component:ReferenciasComponent}];
 
 @NgModule({
   declarations: [
@@ -35,12 +50,16 @@ const routes:Routes = [{path:'',component:PaginaprincipalComponent},
     LoginComponent,
     GaleriaComponent,
     PruebaComponent,
-    AprendizajeComponent
+    AprendizajeComponent,
+    HeaderComponent,
+    ReferenciasComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    BrowserModule,
+    RouterModule.forRoot(routes,routerOptions),
+    FormsModule,
+    OwlModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,52 @@
+
+<router-outlet></router-outlet>
+<section class="container mx-auto text-center overflow-hidden" *ngFor="let institucion of instituciones" >
+    <a class="text-3xl font-bold" style="font-family: 'Abel', sans-serif;" id="{{institucion.nombre}}" >{{institucion.lugar}}</a>
+    
+    <p class="text-3xl font-bold" style="font-family: 'Abel', sans-serif;">{{institucion.periodo}}</p>
+    <section>
+        <div class="container mb-5 mt-5 px-2 py-4 mx-auto my-2 flex justify-center ">
+            <div class="slider md:w-1/2 w-full">
+                <div class="slider-container flex flex-row ">
+                    <img src="{{institucion.imagen1}}">
+                    <img src="{{institucion.imagen2}}">
+                    <img src="{{institucion.imagen3}}">
+                    <img src="{{institucion.imagen4}}">
+                    <img src="{{institucion.imagen5}}">
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container mx-auto px-4 mb-4">
+        <div class=" flex-flow-col flex justify-around text-center items-center h-auto p-5 mt-2 mb-2  gap-2 flex-wrap">
+            <a href="#"
+                class="h-12 rounded-lg border-black border-2 border-solid botonestilo w-48   flex items-center justify-center">Ver
+                Mas</a>
+        </div>
+
+    </div>
+
+    <div class="container mx-auto px-4 mb-4 h-screen " style="font-family: 'Abel', sans-serif;" >
+        
+        <ul class="md:text-2xl  text-center  border-black border-2 border-solid shadow-2xl bg-gray-300 pb-0 mb-2 h-auto">
+            <p class=" font-bold text-3xl ">Actividades Realizadas:</p>     
+            <li>{{institucion.accion}}</li>
+            <li>{{institucion.accion2}}</li>
+            <li>{{institucion.accion3}}</li>
+           
+        <p class="font-bold text-3x1">Documentos</p>
+        <a class="text-blue-400 hover:text-blue-600 " href="#">Documentación  de Proyecto Realizado</a>     
+       
+        </ul>
+
+        <div class="container mx-auto m-0 p-0 border-black border-2 border-dashed h-auto ">
+            <p class="font-bold text-3xl pb-5 mb-2 mt-2 ">Una pequeña reseña</p>
+            <p>{{institucion.resena}}</p>
+           </div>     
+   </div>
+   
+   
+
+</section>
+
+    

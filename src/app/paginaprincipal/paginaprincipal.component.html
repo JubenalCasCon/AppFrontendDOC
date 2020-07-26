@@ -1,24 +1,6 @@
-<!-- Header responsivo -->
-<header>
-    <div class="h-32  text-white bg-center bg-cover flex justify-around items-center flex-col"
-        style="background-image: url(../assets/imagenes/portada.jpg);font-family: 'Abel', sans-serif;">
-        <div
-            class=" mx-2 text-2xl sm:text-3xl lg:text-4xl tracking-widest sm:mx-auto  flex justify-around sm:justify-between">
-            <i class="fa fa-user text-center ml-6 mr-1 sm:mr-3  lg:ml-2"><a [routerLink]="['/perfil']"
-                    class="block">Yo</a></i>
-            <i class="fa fa-paperclip  text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/proyectos']"
-                    class="block">Webs</a></i>
-            <i class="fa fa-envelope text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/contacto']"
-                    class="block">Info</a></i>
-            <i class="fa fa-book  text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/curriculum']"
-                    class="block">CV</a></i>
-            <i class="fa fa-folder-open  text-center mr-auto lg:ml-2 "><a [routerLink]="['/blog']"
-                    class="block">Blog</a></i>
-        </div>
-    </div>
-</header>
-
-
+ <!-- Header responsivo -->
+ <app-header></app-header>
+ <router-outlet></router-outlet>
 
 <!-- Div con imagene de perfil y descripcion -->
 <div
@@ -35,57 +17,54 @@
 
     </div>
 </div>
-<!-- <div class="container mx-auto h-screen flex items-center relative ">
-<div class="container mx-auto flex justify-center h-screen   mt-2">
-    <div class="bg-cover rounded-full w-64 h-64  border-solid border-2 border-black flex mt-2 " style="background-image: url(../assets/imagenes/perfil.jpg);">
-    </div>
-<div class="text-center text-xl font-bold text-blue-300 text-xl  container">
-    <p>Ing</p>
-    <p>Benjamin Alejandro Castañeda Contreras</p>
- <div class="mt-6">
-     <p>Project Manager con potencial</p>
-     <p>Me especializo en el desarrollo de páginas web involucrandome en todo el proceso de desarrollo</p>
-     <p>(Planeación,Wirdframes ,frontend,backend y bases de datos)Planeo para desarrollar y desarrollo para planear</p>
- </div>   
-</div>    
-</div> -->
 
-
-
-<!-- Apartado con imagenes de redes sociales -->
-
-<!-- <div class="container mx-auto w-3/12 h-16  flex flex-row justify-around px-4 py-2 absolute inset-x-0 ">
-    <img  src="../assets/imagenes/Saved Pictures/icons8-facebook-48.png" >
-    <img   src="../assets/imagenes/Saved Pictures/icons8-instagram-40.png">
-    <img  src="../assets/imagenes/Saved Pictures/icons8-twitter-48.png" >
-    <img   src="../assets/imagenes/Saved Pictures/icons8-whatsapp-40.png">
-   
-</div>
-
-</div>
- -->
-<div  class="text-center flex justify-center font-semibold text-blue-500  inline flex flex-col">
-<ul> 
+ <!-- 
+Menu secundario con links a diferentes páginas -->
  
- <li>{{experiencia[0].categoria}}</li>
- <li>{{experiencia[0].lenguaje}}</li>
- <li>{{experiencia[1].lenguaje}}</li>
- <li>{{experiencia[2].lenguaje}}</li>
-</ul>
-
-<ul>
-    <li>{{experiencia[3].categoria}}</li>
-    <li>{{experiencia[3].lenguaje}}</li>
-    <li>{{experiencia[4].lenguaje}}</li>
-    <li>{{experiencia[5].lenguaje}}</li>
-    <li>{{experiencia[6].lenguaje}}</li>
-</ul>
-
-<ul>
-  <li>{{experiencia[7].categoria}}</li>
-  <li>{{experiencia[7].lenguaje}}</li>
-  <li>{{experiencia[8].lenguaje}}</li>
-  <li>{{experiencia[9].lenguaje}}</li>
-</ul>
-
+ <div class="container mx-auto px-4 mb-4" >
+<div class="border-black border-2 border-solid flex-flow-col flex justify-around text-center items-center h-auto p-5 mt-2 mb-2  gap-2 flex-wrap"  style="background:#918888;">
+    <a  href="{{herramienta.link}}"  *ngFor="let herramienta of herramientas " class="h-12 rounded-lg border-black border-2 border-solid botonestilo w-48   flex items-center justify-center">{{herramienta.mensaje}}</a>
 </div>
+
+    
+</div>
+<!-- 
+Cuadro de descripción inicial -->
+
+<div class="container  mx-auto lg:p-20 h-auto "  style="background:#918888;">
+    <div class="bg-white border-black border-2 border-solid  p-3 sm:text-base sm:text-justify text-xs lg:text-2xl text-center leading-loose" style="font-family: 'Abel', sans-serif;">
+        
+
+        <ul>
+            <li class="p-3" *ngFor="let parrafo of parrafos">
+                {{parrafo.contenido}}
+            </li>
+        </ul>
+
+        
+    </div>
+</div>
+
+     <!-- <div *ngIf="mostrarframework==0" class="bg-green-500 hover:bg-green-600 rounded-full mx-2 my-4   border-black border-2 border-solid  w-64 h-8 flex items-center justify-center">
+        <a  (click)="cambiarframework(1)" class="">Frameworks<i class="fa fa-arrow-down"></i></a>
+      </div>
+      <div *ngIf="mostrarframework==1" class="flex justify-center">
+        <ul  class="text-center"> 
+            
+            <li>{{experiencia[0].categoria}}</li>
+            <li>{{experiencia[0].lenguaje}}</li>
+            <li>{{experiencia[1].lenguaje}}</li>
+            <li>{{experiencia[2].lenguaje}}</li>
+            <a class="text-center" (click)="cambiarframework(0)" class=""> <i class="fa fa-arrow-up"></i></a>
+           </ul>
+
+           
+    </div> -->
+
+
+     
+
+
+
+
+

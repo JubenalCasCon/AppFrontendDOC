@@ -1,73 +1,129 @@
 <!-- Header responsivo -->
-<header>
-    <div class="h-32  text-white bg-center bg-cover flex justify-center items-center flex-col" style="background-image: url(../assets/imagenes/portada.jpg);">
-        <div class=" mx-2 text-2xl sm:text-3xl lg:text-4xl tracking-widest sm:mx-auto  flex justify-around">
-        <i class="fa fa-user text-center ml-6 mr-1 sm:mr-3  lg:ml-2"><a [routerLink]="['/perfil']" class="block">Yo</a></i>
-        <i class="fa fa-paperclip  text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/proyectos']" class="block">Webs</a></i>
-        <i class="fa fa-envelope text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/contacto']" class="block">Info</a></i>
-        <i class="fa fa-book  text-center mr-1 sm:mr-3 lg:ml-2"><a [routerLink]="['/curriculum']" class="block">CV</a></i>
-        <i class="fa fa-folder-open  text-center mr-auto lg:ml-2 "><a [routerLink]="['/blog']" class="block">Blog</a></i>
-    </div>
-    </div>
-    </header>
-    
+<app-header></app-header>
+ <router-outlet></router-outlet>
 
-<div class="container text-justify inline-block text-2xl" style="font-family: 'Montserrat', sans-serif;">
-    <p class="text-center">¿Quien soy?</p>
-    <p>He dedicado los últimos 10 años de mi vida al estudio de la informática, pero no te explico más,
-        en el siguiente video puedes conocer un poco más de mi.</p>
+ <div class="container mx-auto text-center flex justify-center flex-wrap">
+    <p class="md:text-5xl">¿Quien Soy?</p>
+    <p class="md:text-3xl">He dedicado 10 años de mi vida al estudio de la Informática , enfocado al desarrollo Web del lado de la planeación y la administración de proyectos</p>
+
 </div>
+
+<!-- 
+Video de presentación -->
+
 <div class="container , mx-auto flex justify-center   w-64 h-64">
     <video src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" controls>
         Tu navegador no implementa el elemento <code>video</code>.
     </video>
 </div>
-<div class="container flex  ml-0 h-auto flex-wrap ">
-    <div class="max-w-sm rounded overflow-hidden shadow-lg mx-auto mt-4 border-gray-600 border-2 border-solid">
-        <div class="flex justify-center w-auto  " style="font-family: 'Montserrat', sans-serif;">
-            <img class="w-64" src="../assets/imagenes/portada.jpg" alt="portada">
-        </div>
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Referencaias</div>
-            <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus odio sit
-                corporis doloremque esse. Eveniet veniam, ipsam ab, aspernatur iusto quas harum incidunt in quidem id
-                reprehenderit, ad odit ea!</p>
-        </div>
-        <div class="px-6 py-4">
-            <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">Ejemplo</span>
-        </div>
-    </div>
 
-    <div class="max-w-sm rounded overflow-hidden shadow-lg mx-auto mt-4 border-gray-600 border-2 border-solid">
-        <div class="flex justify-center ">
-            <img class="w-64" src="../assets/imagenes/portada.jpg" alt="portada">
-        </div>
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Referencias</div>
-            <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus odio sit
-                corporis doloremque esse. Eveniet veniam, ipsam ab, aspernatur iusto quas harum incidunt in quidem id
-                reprehenderit, ad odit ea!</p>
-        </div>
-        <div class="px-6 py-4">
-            <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">Ejemplo</span>
-        </div>
-    </div>
-
-    <div class="max-w-sm rounded overflow-hidden shadow-lg mx-auto mt-4 border-gray-600 border-2 border-solid">
-        <div class="flex justify-center ">
-            <img class="w-64" src="../assets/imagenes/portada.jpg" alt="portada">
-        </div>
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Referencias</div>
-            <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus odio sit
-                corporis doloremque esse. Eveniet veniam, ipsam ab, aspernatur iusto quas harum incidunt in quidem id
-                reprehenderit, ad odit ea!</p>
-        </div>
-        <div class="px-6 py-4">
-            <span
-                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">Ejemplo</span>
-        </div>
-    </div>
+<!-- seccion de estudios -->
+<div [ngClass]="c_titulo">
+    <p class="md:text-5xl">Estudios</p>
 </div>
+
+<div class="container mx-auto p-3 m-3  ">
+    <div class="font-bold leading-loose border-solid rounded-lg shadow-lg border-blue-300 border-2  bg-gray-300 text-center md:text-2xl flex justify-center p-3">
+    <ul class="p-3 list-disc"   style="font-family: 'Abel', sans-serif;" >
+       <li *ngFor="let estudio of estudios">{{estudio.escuela}}</li>
+    </ul>
+</div>
+</div>
+
+<!-- seccion de Referencias -->
+<div [ngClass]="c_titulo">
+    <p class="md:text-5xl">Referencias</p>
+</div>
+
+<!-- Tarjetas de presentación -->
+
+<div [ngClass]="c_container">
+    <div [ngClass]="c_card">
+        <img [ngClass]="c_img" [src]="imageninocisa" alt="imagenmuestra">
+        <div [ngClass]="c_cabecera">
+            {{encabezadoinocisa}}
+        </div>
+        <div [ngClass]="c_contenido">
+        <p class="p-3">{{contenidoinocisa}}</p>
+        <a (click)="goug()" [ngClass]="c_boton">Ver</a>
+        </div>
+    </div>
+
+    <div [ngClass]="c_card">
+        <img [ngClass]="c_img" [src]="imagenug" alt="imagenmuestra">
+        <div [ngClass]="c_cabecera">
+            {{encabezadoug}}
+        </div>
+        <div [ngClass]="c_contenido">
+        <p class="p-3">{{contenidoug}}</p>
+        <a (click)="goug()" [ngClass]="c_boton">Ver</a>
+        </div>
+    </div>
+
+    <div [ngClass]="c_card">
+        <img [ngClass]="c_img" [src]="imagensacti" alt="imagenmuestra">
+        <div [ngClass]="c_cabecera">
+            {{encabezadosacti}}
+        </div>
+        <div [ngClass]="c_contenido">
+        <p class="p-3">{{contenidosacti}}</p>
+        <a (click)="goug()" [ngClass]="c_boton">Ver</a>
+        </div>
+    </div>
+
+    
+</div>
+
+
+
+
+
+<!-- Cuadro con nombre de cada institucion y fecha de acceso -->
+<section  class="container mx-auto text-center overflow-hidden" *ngFor="let institucion of instituciones" >
+   <section id="{{institucion.sitio}}" > 
+    <a class="text-3xl font-bold" style="font-family: 'Abel', sans-serif;" id="{{institucion.nombre}}" >{{institucion.lugar}}</a>
+    
+    <p class="text-3xl font-bold" style="font-family: 'Abel', sans-serif;">{{institucion.periodo}}</p>
+</section>
+<!-- Carrusel --> 
+    <section>
+        <div class="container mb-5 mt-5 px-2 py-4 mx-auto my-2 flex justify-center ">
+            <div class="slider md:w-1/2 w-full">
+                <div class="slider-container flex flex-row ">
+                    <img src="{{institucion.imagen1}}">
+                    <img src="{{institucion.imagen2}}">
+                    <img src="{{institucion.imagen3}}">
+                    <img src="{{institucion.imagen4}}">
+                    <img src="{{institucion.imagen5}}">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<!-- Cuadros de información y reseñas -->
+    <div  *ngIf="disponible" class="container mx-auto px-4 mb-4 h-screen  " style="font-family: 'Abel', sans-serif;" >
+        
+        <ul class="md:text-2xl font-bold text-center  border-black border-2 border-solid shadow-2xl bg-gray-300 pb-0 mb-2 h-auto rounded-lg">
+            <p class="font-black  text-3xl ">Actividades Realizadas:</p>     
+            <li>{{institucion.accion}}</li>
+            <li>{{institucion.accion2}}</li>
+            <li>{{institucion.accion3}}</li>
+           
+        <p class="font-bold text-3x1">Documentos</p>
+        <a href="{{institucion.link}}" target="_blank" class="text-blue-400 hover:text-blue-600 " href="#">Documentación  de Proyecto Realizado</a>     
+       
+        </ul>
+
+        <div class="md:text-2xl container mx-auto m-0 p-0 border-black border-2 border-dashed h-auto ">
+            <p class="font-bold text-3xl pb-5 mb-2 mt-2 ">Una pequeña reseña</p>
+            <p>{{institucion.resena}}</p>
+           </div>     
+   </div>
+   
+   
+ 
+
+
+
+
+
